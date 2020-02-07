@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Multiplayer Game</title>
+	<style>
+		
+	</style>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+	<body>
+ 
+		<!--<ul id="chat"></ul>-->
+		<h1 id="message">Welcome</h1> 
+
+		<!--<form id="say-form">-->
+		  
+		</form>
+		<div>
+		  <button id="rock">Rock</button>
+		  <button id="paper">Paper</button>
+		  <button id="scissors">Scissors</button>
+		</div>
+
+		<button id="new round">New Game</button>
+		 
+		 
+		<!--<script>
+		  var sock = io();
+		  sock.on('msg', onChatMessage);
+		 
+		  function onChatMessage(msg) {
+			console.log('Chat message!');
+			//var ul = document.querySelector('#chat');
+			var item = document.getElementById("message");
+			item.innerHTML = msg;
+			//ul.appendChild(item);
+		  }
+		 
+		  function sendChatMessage(e) {
+			e.preventDefault();
+		 
+			var inp = document.querySelector('#say-form input');
+			var msg = inp.value;
+			inp.value = '';
+		 
+			sock.emit('msg', msg);
+		  }
+		 
+		  (function init() {
+			var form = document.querySelector('#say-form');
+			form.addEventListener('submit', sendChatMessage);
+		 
+			['rock', 'paper', 'scissors'].forEach(function(figure) {
+			  var btn = document.getElementById(figure);
+			  btn.addEventListener('click', function() {
+				sock.emit('turn', figure);
+			  });
+			});
+		  })();
+		</script>-->
+	<!--<div>
+		<h1 id="message">Welcome! Make your move...</h1>
+	</div>
+	<div>
+		<button id="rock">Rock</button>
+		<button id="paper">Paper</button>
+		<button id="scissors">Scissors</button>
+	</div>-->
+</body>
+<script src="/static/game.js"></script>
+</html>
