@@ -4,7 +4,6 @@ socket.on('chosen',function(){
   socket.emit('start');
 })
 
-
 document.getElementById('rock').addEventListener('click',function(event){
   socket.emit('turn','rock');
 })

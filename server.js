@@ -60,6 +60,8 @@ io.on('connection',function(socket){
 
     var p1Turn = choices[0];
     var p2Turn = choices[1];
+    console.log(p1Turn);
+    console.log(p2Turn);
 
     /*switch(p1Turn){
       case 'rock':
@@ -120,6 +122,8 @@ io.on('connection',function(socket){
 
   socket.on('new round', function(){
     p1Turn = p2Turn = null;
+    choices.pop();
+    choices.pop();
     socket.emit('msg', 'New Round');
   })
 })
