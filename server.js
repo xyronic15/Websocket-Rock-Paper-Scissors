@@ -103,19 +103,19 @@ io.on('connection',function(socket){
     }*/
   
     if(p1Turn==p2Turn){
-        socket.emit('msg', "It\'s is tie!");
+        socket.broadcast.emit('msg', "It\'s is tie!");
       } else if(p1Turn=='rock'&& p2Turn=='paper'){
-        socket.emit('msg', "Player 2 Wins");
+        socket.broadcast.emit('msg', "Player 2 Wins");
       } else if(p1Turn=='rock' && p2Turn=='scissors'){
-        socket.emit('msg', "Player 1 Wins");
+        socket.broadcast.emit('msg', "Player 1 Wins");
       } else if(p1Turn=='paper' && p2Turn=='rock'){
-        socket.emit('msg', "Player 1 Wins");
+        socket.broadcast.emit('msg', "Player 1 Wins");
       } else if(p1Turn=='paper' && p2Turn=='scissors'){
-        socket.emit('msg', "Player 2 Wins");
+        socket.broadcast.emit('msg', "Player 2 Wins");
       } else if(p1Turn=='scissors' && p2Turn=='rock'){
-        socket.emit('msg', "Player 2 Wins");
+        socket.broadcast.emit('msg', "Player 2 Wins");
       } else if(p1Turn=='scissors' && p2Turn=='paper'){
-        socket.emit('msg', "Player 1 Wins");
+        socket.broadcast.emit('msg', "Player 1 Wins");
       }
 
   })
