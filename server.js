@@ -29,7 +29,7 @@ io.on('connection', (sock) => {
   }
  
 });*/
- 
+
 var choices = [];
 var player = {}
 
@@ -48,60 +48,12 @@ io.on('connect',function(socket){
 
 io.on('connection',function(socket){
   socket.on('start',function(){
-    /*var player = {};
-    var choices = [];
-
-    socket.on('turn',function(data){
-      player[socket.id]={
-        choice:data
-      };
-      choices.push(player[socket.id].choice);
-    });*/
 
     var p1Turn = choices[0];
     var p2Turn = choices[1];
     console.log(p1Turn);
     console.log(p2Turn);
 
-    /*switch(p1Turn){
-      case 'rock':
-        switch(p2Turn){
-          case 'rock':
-            socket.emit('msg', "It\'s is tie!");
-            break;
-          case 'paper':
-            socket.emit('msg', "Player 1 wins");
-            break;
-          case 'scissors':
-            socket.emit('msg', "Player 2 wins");
-            break;
-        }
-      case 'paper':
-        switch(p2Turn){
-          case 'rock':
-            socket.emit('msg', "Player 1 wins");
-            break;
-          case 'paper':
-            socket.emit('msg', "It\'s is tie!");
-            break;
-          case 'scissors':
-            socket.emit('msg', "Player 2 wins");
-            break;
-        }
-      case 'scissors':
-        switch(p2Turn){
-          case 'rock':
-            socket.emit('msg', "Player 2 wins");
-            break;
-          case 'paper':
-            socket.emit('msg', "Player 1 wins");
-            break;
-          case 'scissors':
-            socket.emit('msg', "It\'s is tie!");
-            break;
-        }
-    }*/
-  
     if(p1Turn==p2Turn){
         io.emit('msg', "It\'s is tie!");
       } else if(p1Turn=='rock'&& p2Turn=='paper'){
@@ -124,20 +76,9 @@ io.on('connection',function(socket){
     p1Turn = p2Turn = null;
     choices.pop();
     choices.pop();
-    socket.emit('msg', 'New Round');
+    io.emit('msg', 'New Round');
   })
 })
-
-
-
-/*function checkRoundEnd() {
-  /*if (p1Turn !== null && p2Turn !== null) {
-    io.to(roomName).emit('msg', 'Round Ended! P1 - '
-      + p1Turn + ' P2 - ' + p2Turn);
-
-    io.to(roomName).emit('msg', 'Next round!');
-  
-}*/
 
 server.listen(5000, function() {
   console.log('Starting server on port 5000');

@@ -3,24 +3,75 @@
 <head>
 	<title>A Multiplayer Game</title>
 	<style>
-		
+		body{
+			background-color: rgb(0, 153, 255);
+			font-family: Roboto;
+		}
+
+		table{
+			position: absolute;
+			left: 25%;
+		}
+
+		th{
+			text-align: center;
+		}
+
+		.options td{
+			width: 60px;
+			height: 120px;
+		}
+
+		td button{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			height: 60px;
+			width: 180px;
+			font-size: 30px;
+			font-family: Roboto;
+			background-color: white;
+			color: black;
+			border: 5px solid black;
+			border-radius: 10px;
+			text-transform: uppercase;
+		}
+
+		td button:hover{
+			background-color: black;
+			color: white;
+			font-family: Roboto;
+		}
+
+		img{
+			border: 5px solid white;
+			border-radius: 10px;
+		}
+
+		img:hover{
+			border: 5px solid black;
+			border-radius: 10px;
+		}
 	</style>
 	<script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
 
-	<body>
-
-		<h1 id="message">Welcome</h1> 
-
-		</form>
-		<div>
-		  <button id="rock">Rock</button>
-		  <button id="paper">Paper</button>
-		  <button id="scissors">Scissors</button>
-		</div>
-
-		<button id="new round">New Game</button>
+	<div>
+		<table>
+			<tr>
+				<th colspan="3"><h1 id="message">Welcome! Make your move...</h1></th>
+			</tr>
+			<tr class="options">
+				<td><img src="images/Rock.jpg" id="rock" alt="Rock"></td>
+				<td><img src="images/Paper.jpg" id="paper" alt="Paper"></td>
+				<td><img src="images/Scissors.jpg" id="scissors" alt="Scissors"></td>
+			</tr>
+			<tr>
+				<td colspan="3"><button id="new round">New Game</button></td>
+			</tr>
+		</table>
+	</div>
 
 </body>
 <script src="/static/game.js"></script>
