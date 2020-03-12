@@ -47,7 +47,7 @@ io.on('connect',function(socket){
 
 
 io.on('connection',function(socket){
-  socket.on('start',function(){
+  socket.on('check',function(){
 
     var p1Turn = choices[0];
     var p2Turn = choices[1];

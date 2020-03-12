@@ -1,7 +1,7 @@
 var socket = io();
 
 socket.on('chosen',function(){
-  socket.emit('start');
+  socket.emit('check');
 })
 
 document.getElementById('rock').addEventListener('click',function(event){
